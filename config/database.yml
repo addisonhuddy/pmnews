@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  database: pmnews_dev
+  username: addisonhuddy
+  password: 
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: pmnews_dev
+  username: addisonhuddy
+  password: 
+  host: localhost
+
+production:
+  adapter: postgresql
+  database: pmnews_live
+  username: addisonhuddy
+  password: 
+  host: pm-news.org
