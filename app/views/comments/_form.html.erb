@@ -1,0 +1,10 @@
+<!-- Post form -->
+
+<div class="col-lg-6">
+  <%= form_for [@post, @comment] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body,  placeholder: "Leave your comments here...", autofocus: true, class: "form-control" %><br>
+    <%= f.submit class: "btn btn-primary" %><br>
+  </div>
+  <% end %>
+</div>

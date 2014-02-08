@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '4.0.0'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -48,4 +48,7 @@ gem 'foreman'
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
-
+gem 'faker'
+gem 'will_paginate-bootstrap'
+gem 'better_errors'
+gem 'binding_of_caller'

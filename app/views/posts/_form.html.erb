@@ -1,0 +1,8 @@
+<%= form_for @post do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Post Title", autofocus: true %><br>
+    <%= f.text_area :body, class: "form-control", placeholder: "About This Post" %><br>
+    <%= f.text_field :urllink, class: "form-control", placeholder: "http://post.link" %><br>
+    <%= f.submit class: "btn btn-primary pull-right" %>  
+  </div>
+<% end %>

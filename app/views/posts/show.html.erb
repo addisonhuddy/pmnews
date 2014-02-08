@@ -1,0 +1,21 @@
+<!-- Show Post -->
+
+<div class="col-sm-12">
+
+  <h2><%= @post.title %></h2>
+  <p><%= @post.body %></p>
+  <p><%= @post.urllink %></p>
+  <p><%= @post.created_at %></p>
+  <p><%= @post.user.username unless @post.user.nil? %></p>
+
+  <h3>Comments</h3>
+  <div class="row">
+      <%= render 'comments/form' %>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <%= render @comments %>
+    </div>  
+  </div>
+</div>
