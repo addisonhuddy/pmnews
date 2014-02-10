@@ -1,18 +1,15 @@
 <!-- Post partial -->
 
+<%= render partial: 'votes/voter', locals: { post: post } %>
 <%= link_to post.title, post %> 
-
 | 
-
 (<%= post.urllink %>)
-
 <br>
 Posted by <%= post.user.username unless post.user.nil? %>
 <br>
 on <%= post.created_at %>
 <br>
 | Comments (<%= post.comments.count %>)
-<hr>
 
-<%= render partial: 'votes/voter', locals: { post: post } %>
+
 

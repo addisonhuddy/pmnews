@@ -1,7 +1,10 @@
 require 'faker'
 
 # Creating the admin user, me :)
-f = User.create!(username: "addisonhuddy", email: "addisonhuddy@gmail.com", password: 'seriously', password_confirmation: 'seriously', role: 'admin')
+f = User.new(username: "bobryan", email: "bobryan@gmail.com", password: 'seriously', password_confirmation: 'seriously', role: 'admin')
+f.skip_confirmation!
+f.save
+
 # Creating my posts and comments
 rand(25..50).times do
 	p = f.posts.create(title: Faker::Lorem.words(rand(5..10)).join(" "), body: Faker::Lorem.words(rand(20..40)).join(" "), urllink: Faker::Internet.domain_name)
@@ -9,7 +12,9 @@ rand(25..50).times do
 end
 
 rand(25..50).times do
-  p = User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: 'foobarfoobar', password_confirmation: 'foobarfoobar', role: 'member')
+  p = User.new(username: Faker::Internet.user_name, email: Faker::Internet.email, password: 'foobarfoobar', password_confirmation: 'foobarfoobar', role: 'member')
+  p.skip_confirmation!
+  p.save
   rand(10..30).times do
     x = p.posts.create(title: Faker::Lorem.words(rand(5..10)).join(" "), body: Faker::Lorem.words(rand(20..40)).join(" "), urllink: Faker::Internet.domain_name)
     x.update_attribute(:created_at, Time.now - rand(600..31536000))

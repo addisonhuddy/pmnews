@@ -10,8 +10,8 @@
 <body>
 
   <%= render partial: 'layouts/navbar'%>
-  <%= render partial: 'layouts/messages', flash: flash %>
   <div class="container-fluid content">
+    <%= render partial: 'layouts/messages', flash: flash %>
     <div class="row">
       <%= yield %>  
     </div>
