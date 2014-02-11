@@ -8,21 +8,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">PM News</a>
+      <a href="/"><%= image_tag("pm_news_logo.png", :class => "navbar-image") %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
-      <li><a href="#">Submit</a></li>
-      <li><a href="#">Jobs</a></li>
-      <li><a href="#">About</a></li>
+        <li><%= link_to "Submit Post", new_post_path %></li>
+        <li><%= link_to "Jobs", new_post_path %></li>
+        <li><%= link_to "About", new_post_path %></li>
+        <li><%= link_to "Contact", new_post_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
       <% if user_signed_in? %>
         <li><a href="#">Signed in as <%= current_user.username %></a></li>
-        <li><%= link_to "Sign Out", destroy_user_destroy_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: 'delete' %></li>
       <% else %>
         <li><%= link_to "Sign In", new_user_session_path %></li>
         <li><%= link_to "Create Account", new_user_registration_path %></li>
