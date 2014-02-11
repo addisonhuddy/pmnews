@@ -1,8 +1,6 @@
 // footer
 
 .footer {
-  min-height: 100px;
-  height: 100%;
   background-color: rgb(24, 188, 156);
   font-size: 80%;
   margin-top: 50px;
@@ -17,4 +15,27 @@
 
 .footer i {
   margin-right: 5px;
+}
+
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.content {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -210px; 
+}
+.content:after {
+  content: "";
+  display: block;
+}
+.footer, .content:after {
+  /* .push must be the same height as footer */
+  height: 210px; 
 }

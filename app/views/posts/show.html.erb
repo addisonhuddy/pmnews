@@ -3,7 +3,7 @@
 <div class="col-sm-12">
 
   <h2><%= @post.title %></h2>
-  <p><%= @post.body %></p>
+  <p><%= markdown @post.body %></p>
   <p><%= @post.urllink %></p>
   <p><%= @post.created_at %></p>
   <p><%= @post.user.username unless @post.user.nil? %></p>
