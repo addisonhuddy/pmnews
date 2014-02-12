@@ -1,6 +1,6 @@
-<div>
-  <%= markdown comment.body %>
-  <%= comment.user.username unless comment.user.nil? %>
-  <%= comment.created_at %>
+<div class="comment">
+  <div class="comment-body">
+    <%= markdown comment.body %>
+  </div>
+  <p class="comment-info">By <%= comment.user.username unless comment.user.nil? %> on <%= comment.created_at.strftime("%D") %></p>
 </div>
-<br>

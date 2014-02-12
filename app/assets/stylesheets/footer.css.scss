@@ -3,7 +3,6 @@
 .footer {
   background-color: rgb(24, 188, 156);
   font-size: 80%;
-  margin-top: 50px;
   padding-left: 10px;
   padding-top: 5px;
   color: white;
@@ -29,7 +28,7 @@ html, body {
 .content {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -210px; 
+  margin-bottom: -120px; 
 }
 .content:after {
   content: "";
@@ -37,5 +36,7 @@ html, body {
 }
 .footer, .content:after {
   /* .push must be the same height as footer */
-  height: 210px; 
+  min-height: 120px; 
+  height: 100%;
+
 }

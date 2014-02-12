@@ -1,14 +1,23 @@
 <!-- Show Post -->
 
 <div class="col-sm-12">
+<ul class="list-inline">
+  <li><h2><%= @post.title %></h2></li>
+  <li>
+    <h4>
+      <a href="http://<%= @post.urllink %>"><%= @post.urllink %></a>
+    </h4>
+  </li>
 
-  <h2><%= @post.title %></h2>
-  <p><%= markdown @post.body %></p>
-  <p><%= @post.urllink %></p>
-  <p><%= @post.created_at %></p>
-  <p><%= @post.user.username unless @post.user.nil? %></p>
+</ul>  
+<%= markdown @post.body %>
+<p>Posted by <%= @post.user.username unless @post.user.nil? %> on <%= @post.created_at.strftime("%D") %></p>
 
-  <h3>Comments</h3>
+  
+
+  <hr>
+
+  <h4>Comments</h4>
   <div class="row">
       <%= render 'comments/form' %>
   </div>
