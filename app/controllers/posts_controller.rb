@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   respond_to :html, :xml, :js
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 25)
+    @posts = Post.friendly.paginate(:page => params[:page], :per_page => 25)
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
   end

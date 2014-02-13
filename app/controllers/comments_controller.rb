@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   respond_to :html, :xml, :js
 
   def create
-    @post =Post.find(params[:post_id])
+    @post =Post.friendly.find(params[:post_id])
     @comments = @post.comments
     @comment = Comment.new(comment_params)
     @comment.post = @post
