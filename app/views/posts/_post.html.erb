@@ -7,10 +7,10 @@
   </ul>
 
   <ul class="list-inline post-info">
-    <li><%= render partial: 'votes/voter', locals: { post: post } %></li>
+    <li><%= render partial: "votes/voter", locals: { post: post } %></li>
     <li>By <%= post.user.username unless post.user.nil? %> on <%= post.created_at.strftime("%D") %></li>
     <li>Comments (<%= post.comments.count %>)</li>
-    <li><%= post.points %> <%="point".pluralize(post.points) %></li>
+    <li id="post-<%= post.id %>-points"><%= post.points %> <%="point".pluralize(post.points) %></li>
   </ul>
 
 </div>

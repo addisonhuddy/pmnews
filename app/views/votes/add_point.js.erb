@@ -1,0 +1,3 @@
+$("#<%= @post.id %>").attr('class', 'fa fa-thumbs-up');
+$("#post-<%= @post.id %>-points").html('<%= escape_javascript @post.points.to_s %> <%= escape_javascript "point".pluralize(@post.points) %>');
+

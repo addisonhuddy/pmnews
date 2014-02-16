@@ -3,9 +3,12 @@ class VotesController < ApplicationController
   
   def add_point
     update_vote(1)
-    redirect_to :back
-  end
 
+    respond_to do |format|
+      format.js
+      format.html { redirect_to :back}
+    end
+  end
 
 private
 

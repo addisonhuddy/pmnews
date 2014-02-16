@@ -1,1 +1,8 @@
-<%= link_to " ", post_add_point_path(post), class: 'fa fa-thumbs-o-up' %>
+
+<% if user_signed_in?  &&  current_user.votes.where(post_id: post.id).exists? %>
+  <%= link_to " ", post_path(post), class: 'fa fa-thumbs-up' %>
+<% elsif user_signed_in? && current_user.votes.where(post_id: post.id).nil? %>
+  <%= link_to " ", post_add_point_path(post), class: 'fa fa-thumbs-o-up', remote: true, id: post.id %>
+<% else %>
+  <%= link_to " ", post_add_point_path(post), class: 'fa fa-thumbs-o-up', id: post.id %>
+<% end %>
