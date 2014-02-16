@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   before_filter :setup
-
+  
   def add_point
     update_vote(1)
     redirect_to :back
@@ -10,6 +10,7 @@ class VotesController < ApplicationController
 private
 
   def setup
+    authorize! :create, Vote, message: "You need to be a user to do that."
     @post = Post.friendly.find(params[:post_id])
     @vote = @post.votes.where(user_id: current_user.id).first
   end

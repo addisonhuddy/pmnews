@@ -14,10 +14,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    authorize! :create, Post, message: "You need to be signed up to do that."
   end
 
   def create
     @post = Post.new(post_params)
+    authorize! :create, Post, message: "You need to be signed up to do that."
     if @post.save
       respond_to do |format|
         format.html { redirect_to @post }

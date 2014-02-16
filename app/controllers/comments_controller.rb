@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.post = @post
 
+    authorize! :create, Comment, message: "You need to be signed up to do that."
     if @comment.save
       respond_to do |format|
         format.html { redirect_to @post }
@@ -15,7 +16,7 @@ class CommentsController < ApplicationController
       end
     else
       flash[:error] = 'There was an error saving the comment. Please try again.'
-      render 'post/show'
+      render 'posts/show'
     end
   end
 
