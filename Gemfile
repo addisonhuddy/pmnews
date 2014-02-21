@@ -58,4 +58,4 @@ gem 'omniauth-twitter'
 gem 'redcarpet'
 gem 'friendly_id'
 gem 'cancan'
-
+gem 'ancestry'

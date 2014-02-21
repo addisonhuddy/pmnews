@@ -1,6 +1,9 @@
 <div class="comment">
-  <div class="comment-body">
-    <%= markdown comment.body %>
-  </div>
-  <p class="comment-info">By <%= comment.user.username unless comment.user.nil? %> on <%= comment.created_at.strftime("%D") %></p>
+  <ul class="list-inline comment-body">
+    <li><%= comment.body %></li>
+  </ul>
+  <ul class="list-inline comment-info">
+    <li>By <%= comment.user.username unless comment.user.nil? %> on <%= comment.created_at.strftime("%D") %></li>
+    <li><%= link_to "Reply", post_comment_path(@post, comment, parent_id: comment), id: comment.id, class: "text-info" %></li>
+  </ul>
 </div>
