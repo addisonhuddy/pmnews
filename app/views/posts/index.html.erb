@@ -12,13 +12,13 @@
     <ul class="list-inline post-info post-margin">
       <li><%= render partial: "votes/voter", locals: { post: post } %></li>
       <li>By <%= post.user.username unless post.user.nil? %> on <%= post.created_at.strftime("%D") %></li>
-      <li>Comments (<%= post.comments.count %>)</li>
+      <li><%= post.comments.count %> <%="comment".pluralize(post.comments.count) %> </li>
       <li id="post-<%= post.id %>-points"><%= post.points %> <%="point".pluralize(post.points) %></li>
     </ul>
   </div>
 
   <% end %>
 
-  <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+  <div class="text-center"><%= will_paginate @collection, page_links: false,renderer: BootstrapPagination::Rails %></div>
 
 </div>

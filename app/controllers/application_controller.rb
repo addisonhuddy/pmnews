@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_path, :alert => exception.message
   end
 
+  def access_denied(exception)
+    redirect_to root_path, :alert => exception.message
+  end
+
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new
     extensions = {fenced_code_blocks: true}

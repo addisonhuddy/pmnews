@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   after_create :create_vote
 
-  default_scope order('created_at DESC')
+  default_scope order('rank DESC')
 
   validates :body,
             :presence => {:message => "Can't be blank"},
@@ -35,6 +35,13 @@ class Post < ActiveRecord::Base
 
   def noralize_friendly_id(string)
     suerp[0..100]
+  end
+
+  def update_rank
+    age = (self.created_at - Time.new(1970,1,1)) / 86400
+    new_rank = (points - 1)/(age + 2)**1.8
+
+    self.update_attribute(:rank, new_rank)
   end
 end
 

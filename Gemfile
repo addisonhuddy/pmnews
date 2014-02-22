@@ -59,3 +59,6 @@ gem 'redcarpet'
 gem 'friendly_id'
 gem 'cancan'
 gem 'ancestry'
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+

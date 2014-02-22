@@ -10,6 +10,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable, :omniauth_providers => [:twitter]
+  
+  ROLES = %w[member admin]
+
+  def role?(base_role)
+    role.nil? ? false : ROLES.index(base_role.to_s) <= ROLES.index(role)
+  end
+  
+  def admin?
+    role == "admin"
+  end
 
   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
