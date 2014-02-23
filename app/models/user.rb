@@ -41,7 +41,9 @@ class User < ActiveRecord::Base
   private
 
   def set_member
-    self.role = 'member'
+    unless admin?
+      self.role = 'member'
+    end
   end
 
 end
