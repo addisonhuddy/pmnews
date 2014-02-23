@@ -10,19 +10,9 @@
  *
  *= require_self
  *= require bootstrap
- *= require font-awesome
  *= require comments
  *= require footer
  *= require navbar
  *= require posts
- *= require votes
+ *= require font-awesome
  */
-
-.content {
-  // background-color: rgb(236, 238, 243);
-}
-
-.navbar {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
