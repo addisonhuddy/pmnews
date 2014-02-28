@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
                       username: auth.info.nickname,
                       password: pass,
                       password_confirmation: pass,
-                      email: '#{auth.info.nickname}@twitter.com'
+                      email: pass
                     )
       user.skip_confirmation!
       user.save

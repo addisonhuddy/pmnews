@@ -5,7 +5,11 @@ f = User.new(username: "addisonhuddy", email: "addisonhuddy@gmail.com", password
 f.skip_confirmation!
 f.save
 
-p = f.posts.create(title: "Volatility for Product Managers", body: "Projects change. A lot. Unknown technical challenges arise.  Story estimates aren’t always accurate. You’ll always have volatility. It isn’t an evil thing.", urllink: "pivotallabs.com/volatility-for-product-managers/")
+f.posts.create(title: "Volatility for Product Managers", body: "Projects change. A lot. Unknown technical challenges arise.  Story estimates aren’t always accurate. You’ll always have volatility. It isn’t an evil thing.", urllink: "pivotallabs.com/volatility-for-product-managers/")
+
+f.posts.create(title: "High Functioning Teams", body: "What does it take to make a really high performing product team", urllink: "pivotallabs.com/high-functioning-teams")
+
+f.posts.create(title: "The Lean Enterprise", body: "A great build on the Lean Startup for large Enterprises", urllink: "pivotallabs.com/lean-enterprise")
 
 # # Creating my posts and comments
 # rand(25..50).times do
