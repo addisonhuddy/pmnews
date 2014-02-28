@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     authorize! :create, Post, message: "You need to be signed up to do that."
     if @post.save
       respond_to do |format|
@@ -40,6 +41,6 @@ class PostsController < ApplicationController
 private
 
   def post_params
-    params.require(:post).permit(:title, :body, :urllink)
+    params.require(:post).permit(:title, :body, :urllink, :user_id)
   end
 end
