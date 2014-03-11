@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   def show
     @post = Post.friendly.find(params[:post_id])
     @postcomments = Comment.find(params[:parent_id])
-    @comment = Comment.new
+    @comment = Comment.new(:parent_id => params[:parent_id])
   end
 
   def create
