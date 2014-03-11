@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1243790142">
+    <data-source source="LOCAL" name="Rails pmnews: development" uuid="ee955ea3-a9dc-4823-8925-9d134fb20d35">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/pmnews_dev</jdbc-url>
+      <user-name>addisonhuddy</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails pmnews: test" uuid="f6164e29-7db0-4712-812a-4f4a540cbc4c">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/pmnews_dev</jdbc-url>
+      <user-name>addisonhuddy</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails pmnews: production" uuid="b9f4bcd2-5ae3-4c20-9661-8dd1aadd0bd5">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://pm-news.org/pmnews_live</jdbc-url>
+      <user-name>addisonhuddy</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
