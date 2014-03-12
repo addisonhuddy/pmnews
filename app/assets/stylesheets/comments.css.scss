@@ -23,6 +23,8 @@
   border-left-color: #2c3e50;
 }
 
-.nested-comments .nested-comments .nested-comments .nested-comments {
-  margin-left: 0;
+.nested-comments .nested-comments .nested-comments .nested-comments .nested-comments {
+  margin-left: 0px;
+  border: none;
+  padding-left: 0px;
 }

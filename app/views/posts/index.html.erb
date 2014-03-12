@@ -5,14 +5,14 @@
   <div class="post">
     <ul class="list-inline post-margin">
       <li class="pull-left"><%= count + index + 1 %>.</li>
-      <li><%= link_to post.title, post %></li>
+      <li><%= link_to post.urllink, post %></li>
       <li class="post-link">(<%= post.urllink %>)</li>
     </ul>
 
     <ul class="list-inline post-info post-margin">
       <li><%= render partial: "votes/voter", locals: { post: post } %></li>
       <li>Posted by <%= post.user.username unless post.user.nil? %> on <%= post.created_at.strftime("%D") %></li>
-      <li><%= post.comments.count %> <%="comment".pluralize(post.comments.count) %> </li>
+      <li><%= link_to "Comment".pluralize(post.comments.count), post %> (<%= post.comments.count %>)</li>
       <li id="post-<%= post.id %>-points"><%= post.points %> <%="point".pluralize(post.points) %></li>
     </ul>
   </div>
