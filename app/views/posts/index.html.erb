@@ -5,7 +5,7 @@
   <div class="post">
     <ul class="list-inline post-margin">
       <li class="pull-left"><%= count + index + 1 %>.</li>
-      <li><%= link_to post.urllink, post %></li>
+      <li><a href="http://<%= post.urllink %>"><%= post.urllink %></a></li>
       <li class="post-link">(<%= post.urllink %>)</li>
     </ul>
 
