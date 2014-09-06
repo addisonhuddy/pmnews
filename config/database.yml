@@ -1,20 +1,17 @@
 development:
   adapter: postgresql
   database: pmnews_dev
-  username: addisonhuddy
-  password: 
+  template: template0
   host: localhost
 
 test:
   adapter: postgresql
   database: pmnews_dev
-  username: addisonhuddy
-  password: 
+  template: template0
   host: localhost
 
 production:
   adapter: postgresql
   database: pmnews_live
-  username: addisonhuddy
-  password: 
+  template: template0
   host: pm-news.org
